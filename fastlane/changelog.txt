@@ -1,0 +1,6 @@
+• This update introduces a few major accessibility enhancements, including VoiceOver descriptions of conversation messages.
+• Even if your thumbs are slow, sending messages will still be faster whenever you tap the send button in large groups.
+• The new design for the attachment upload and download progress indicators might look even better than the attachment that they sent you.
+• Several low-memory crashes have become distant-memory crashes, so you can forget about them.
+
+Interested in helping improve Signal? We're hiring. Visit https://signal.org/workworkwork to learn more.

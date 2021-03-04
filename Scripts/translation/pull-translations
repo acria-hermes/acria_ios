@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+
+set -x
+set -e
+
+BIN_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+REPO_ROOT=$BIN_DIR/../..
+LOCALIZATION_ROOT=$REPO_ROOT/Signal/translations
+
+cd $LOCALIZATION_ROOT
+
+# Pull all translations which are at least 80% complete
+tx pull -a --minimum-perc=80
+
+# Legacy hack: pull *any existing* translations regardless of their completion.
+# Once supported, we don't want to drop any translations.
+tx pull --force
+
+# There's some problem with nb_NO, iconv fails to parse it.
+# I'm guessing it some kind of unicode encoding issue.
+rm -rf nb_NO.lproj
+
+for dir in *.lproj
+do
+
+  # en.lproj is already utf-8
+  if [[ "$dir" = "en.lproj" ]]; then
+    continue
+  fi
+
+  pushd $dir
+
+  translations=$(ls *.strings)
+  for translation in $translations; do
+    # Transifex pulls utf-16, but our string linting script needs utf-8.
+    # Plus we can see the string diffs in GH this way.
+    echo "Converting $dir/$translation to UTF-8"
+    iconv -f UTF-16 -t UTF-8 $translation > $translation.utf8
+    mv $translation.utf8 $translation
+  done
+
+  popd
+
+done
+
+# Get and build iStringsCheck from https://github.com/FredericJacobs/iStringsCheck
+# This does some checks to make sure all strings are present and that interpolated strings have the right number of arguments
+LINT_CMD=$REPO_ROOT/../l10n_lint/target/debug/l10n_lint
+
+if [ -e $LINT_CMD ]
+then
+  $LINT_CMD en.lproj/Localizable.strings .
+  $LINT_CMD en.lproj/InfoPlist.strings .
+else
+  echo "Missing string linter. See: https://github.com:WhisperSystems/l10n_lint"
+  exit 1
+fi
+
+echo "Make sure you register any new localizations in XCode! (Go to Project > Signal > Localizations > Add Localizations)"
