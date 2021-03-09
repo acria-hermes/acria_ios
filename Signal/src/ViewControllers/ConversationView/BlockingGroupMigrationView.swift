@@ -49,7 +49,7 @@ class BlockingGroupMigrationView: UIStackView {
         let text = String(format: format, learnMoreText)
         let attributedString = NSMutableAttributedString(string: text)
         attributedString.setAttributes([
-            .foregroundColor: Theme.accentBlueColor
+            .foregroundColor: Theme.orangeTintColor()
         ],
         forSubstring: learnMoreText)
 
@@ -66,7 +66,7 @@ class BlockingGroupMigrationView: UIStackView {
         let continueButton = OWSFlatButton.button(title: CommonStrings.continueButton,
                                                  font: UIFont.ows_dynamicTypeBody.ows_semibold,
                                                  titleColor: .white,
-                                                 backgroundColor: .ows_accentBlue,
+                                                 backgroundColor: Theme.orangeTintColor(),
                                                  target: self,
                                                  selector: #selector(didTapContinueButton))
         continueButton.autoSetHeightUsingFont()

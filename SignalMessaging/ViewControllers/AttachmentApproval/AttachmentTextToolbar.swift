@@ -86,6 +86,7 @@ class AttachmentTextToolbar: UIView, MentionTextViewDelegate {
             guard let self = self else { return }
             self.didTapSend()
         }
+        sendButton.backgroundColor = Theme.orangeTintColor()
         sendButton.accessibilityLabel = NSLocalizedString("ATTACHMENT_APPROVAL_SEND_BUTTON", comment: "Label for 'send' button in the 'attachment approval' dialog.")
 
         viewOnceButton.block = { [weak self] in

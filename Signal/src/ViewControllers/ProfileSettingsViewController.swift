@@ -229,7 +229,7 @@ public class ProfileSettingsViewController: OWSTableViewController {
         } else {
             aboutSection.add(OWSTableItem.item(name: NSLocalizedString("PROFILE_VIEW_ADD_BIO_TO_PROFILE",
                                                                        comment: "Button to add a 'bio' to the user's profile in the profile view."),
-                                               textColor: Theme.accentBlueColor,
+                                               textColor: Theme.orangeTintColor(),
                                                accessoryType: .disclosureIndicator,
                                                accessibilityIdentifier: "profile_bio") { [weak self] in
                 self?.didTapBio()
@@ -252,7 +252,7 @@ public class ProfileSettingsViewController: OWSTableViewController {
             attributedText.append(" ")
             attributedText.append(NSAttributedString(string: CommonStrings.learnMore,
                                                      attributes: [
-                                                        NSAttributedString.Key.foregroundColor: Theme.accentBlueColor,
+                                                        NSAttributedString.Key.foregroundColor: Theme.orangeTintColor(),
                                                         NSAttributedString.Key.underlineStyle: 0
                                                      ]))
             label.attributedText = attributedText
@@ -494,7 +494,7 @@ public class ProfileSettingsViewController: OWSTableViewController {
         } else {
             usernameLabel.text = NSLocalizedString("PROFILE_VIEW_CREATE_USERNAME",
                                                    comment: "A string indicating that the user can create a username on the profile view.")
-            usernameLabel.textColor = Theme.accentBlueColor
+            usernameLabel.textColor = Theme.orangeTintColor()
         }
     }
 

@@ -135,6 +135,10 @@ class AnimatedProgressView: UIView {
             }
         }
     }
+    
+    func setLabelColor(_ color: UIColor) {
+        label.textColor = color
+    }
 
     private var completedSuccessfully: Bool?
     private var animationCompletionHandler: (() -> Void)?
@@ -168,6 +172,7 @@ class AnimatedProgressView: UIView {
 
         animationCompletion()
     }
+    
 }
 
 private extension AnimationView {

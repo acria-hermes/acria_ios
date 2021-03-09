@@ -204,6 +204,7 @@ typedef enum : NSUInteger {
     // chain, and thus won't inherit our inputAccessoryView, so we manually set it here.
     OWSAssertDebug(self.inputAccessoryPlaceholder != nil);
     _searchController.uiSearchController.searchBar.inputAccessoryView = self.inputAccessoryPlaceholder;
+    _searchController.uiSearchController.searchBar.tintColor = Theme.whiteBlackColor;
 
     self.reloadTimer = [NSTimer weakTimerWithTimeInterval:1.f
                                                    target:self
@@ -1146,7 +1147,7 @@ typedef enum : NSUInteger {
     if (name && !attributedName) {
         attributedName =
             [[NSAttributedString alloc] initWithString:name
-                                            attributes:@{ NSForegroundColorAttributeName : Theme.primaryTextColor }];
+                                            attributes:@{ NSForegroundColorAttributeName : Theme.whiteBlackColor }];
     }
 
     if ([attributedName isEqual:self.headerView.attributedTitle]) {
@@ -1241,7 +1242,7 @@ typedef enum : NSUInteger {
                         pill.buttonText = self.isCurrentCallForThread ? returnString : joinString;
                         [videoCallButton setCustomView:pill];
                     } else {
-                        UIImage *image = [Theme iconImage:ThemeIconVideoCall];
+                        UIImage *image = [Theme iconImage:ThemeIconCircleVideoCall];
                         [videoCallButton setImage:image];
                         videoCallButton.target = self;
                         videoCallButton.action = @selector(showGroupLobbyOrActiveCall);
@@ -1254,7 +1255,7 @@ typedef enum : NSUInteger {
                     [barButtons addObject:videoCallButton];
                 } else {
                     UIBarButtonItem *audioCallButton =
-                        [[UIBarButtonItem alloc] initWithImage:[Theme iconImage:ThemeIconAudioCall]
+                        [[UIBarButtonItem alloc] initWithImage:[Theme iconImage:ThemeIconCircleTelephoneIcon]
                                                          style:UIBarButtonItemStylePlain
                                                         target:self
                                                         action:@selector(startIndividualAudioCall)];
@@ -1264,7 +1265,7 @@ typedef enum : NSUInteger {
                     [barButtons addObject:audioCallButton];
 
                     UIBarButtonItem *videoCallButton =
-                        [[UIBarButtonItem alloc] initWithImage:[Theme iconImage:ThemeIconVideoCall]
+                        [[UIBarButtonItem alloc] initWithImage:[Theme iconImage:ThemeIconCircleVideoCall]
                                                          style:UIBarButtonItemStylePlain
                                                         target:self
                                                         action:@selector(startIndividualVideoCall)];
@@ -1275,6 +1276,11 @@ typedef enum : NSUInteger {
                 }
             }
 
+            [self.navigationItem.leftBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                             Theme.whiteBlackColor, NSForegroundColorAttributeName,
+                                             nil]
+                                   forState: UIControlStateNormal];
+            
             self.navigationItem.rightBarButtonItems = [barButtons copy];
             [self showGroupCallTooltipIfNecessary];
             return;
@@ -1294,7 +1300,7 @@ typedef enum : NSUInteger {
     UIFont *subtitleFont = self.headerView.subtitleFont;
     NSDictionary *attributes = @{
         NSFontAttributeName : subtitleFont,
-        NSForegroundColorAttributeName : [Theme.navbarTitleColor colorWithAlphaComponent:(CGFloat)0.9],
+        NSForegroundColorAttributeName : [Theme.whiteBlackColor colorWithAlphaComponent:(CGFloat)0.9],
     };
     NSString *hairSpace = @"\u200a";
     NSString *thinSpace = @"\u2009";

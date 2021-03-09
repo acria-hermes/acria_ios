@@ -440,7 +440,7 @@ public class MessageActionsToolbar: UIToolbar {
 
         autoresizingMask = .flexibleHeight
         translatesAutoresizingMaskIntoConstraints = false
-        barTintColor = Theme.isDarkThemeEnabled ? .ows_gray75 : .ows_white
+        barTintColor = UIColor(red: 0.97, green: 0.97, blue: 0.97, alpha: 1.00)
         setShadowImage(UIImage(), forToolbarPosition: .any)
 
         buildItems()
@@ -464,7 +464,7 @@ public class MessageActionsToolbar: UIToolbar {
                 target: self,
                 action: #selector(didTapItem(_:))
             )
-            actionItem.tintColor = Theme.primaryIconColor
+            actionItem.tintColor = Theme.orangeTintColor()
             actionItem.accessibilityLabel = action.accessibilityLabel
             newItems.append(actionItem)
             itemToAction[actionItem] = action

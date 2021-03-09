@@ -563,7 +563,7 @@ public class OnboardingPhoneNumberViewController: OnboardingBaseViewController {
             "REGISTRATION_VIEW_PHONE_NUMBER_SPINNER_LABEL_FORMAT",
             comment: "Label for the progress spinner shown during phone number registration. Embeds {{phone number}}.")
         progressSpinner.loadingText = String(format: progressViewFormat, formattedNumber)
-
+        progressSpinner.setLabelColor(.white)
         // Preemptively resign so we don't reacquire first responder status between the alert
         // dismissal and the progress view animation
         self.phoneNumberTextField.resignFirstResponder()

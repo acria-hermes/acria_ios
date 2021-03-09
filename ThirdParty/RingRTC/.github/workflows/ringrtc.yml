@@ -1,0 +1,41 @@
+name: RingRTC CI
+
+on: [push]
+
+jobs:
+  code_formatting:
+    name: Code Formatting
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Check format
+      run: |
+        rustup toolchain install ${{ env.NIGHTLY_VERSION }}
+        rustup component add rustfmt --toolchain ${{ env.NIGHTLY_VERSION }}
+        rustup show
+        cd src/rust
+        cargo +${{ env.NIGHTLY_VERSION }} fmt -- --check
+      env:
+        NIGHTLY_VERSION: nightly-2020-04-12
+
+  lints:
+    name: Lints
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run clippy
+      run: |
+        rustup component add clippy
+        rustup show
+        rm -rf out/rust-lint && cargo clippy --target-dir=out/rust-lint --manifest-path=./src/rust/Cargo.toml --features sim -- -D warnings
+
+  tests:
+    name: Tests
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run tests
+      run: |
+        rustup show
+        cd src/rust
+        ./scripts/run-tests

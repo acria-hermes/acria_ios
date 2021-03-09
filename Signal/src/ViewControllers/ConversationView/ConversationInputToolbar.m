@@ -219,8 +219,8 @@ const CGFloat kMaxIPadTextViewHeight = 142;
     [self.cameraButton addTarget:self
                           action:@selector(cameraButtonPressed)
                 forControlEvents:UIControlEventTouchUpInside];
-    UIImage *cameraIcon = [Theme iconImage:ThemeIconCameraButton];
-    [self.cameraButton setTemplateImage:cameraIcon tintColor:Theme.primaryIconColor];
+    UIImage *cameraIcon = [Theme iconImage:ThemeIconSecondCameraButton];
+    [self.cameraButton setTemplateImage:cameraIcon tintColor:Theme.orangeTintColor];
     [self.cameraButton autoSetDimensionsToSize:CGSizeMake(40, kMinToolbarItemHeight)];
     SET_SUBVIEW_ACCESSIBILITY_IDENTIFIER(self, _cameraButton);
 
@@ -240,7 +240,7 @@ const CGFloat kMaxIPadTextViewHeight = 142;
     _sendButton = [[UIButton alloc] init];
     self.sendButton.accessibilityLabel = MessageStrings.sendButton;
     [self.sendButton addTarget:self action:@selector(sendButtonPressed) forControlEvents:UIControlEventTouchUpInside];
-    [self.sendButton setTemplateImageName:@"send-solid-24" tintColor:UIColor.ows_accentBlueColor];
+    [self.sendButton setTemplateImageName:@"send-solid-24" tintColor:Theme.orangeTintColor];
     [self.sendButton autoSetDimensionsToSize:CGSizeMake(50, kMinToolbarItemHeight)];
     SET_SUBVIEW_ACCESSIBILITY_IDENTIFIER(self, _sendButton);
 
@@ -248,7 +248,7 @@ const CGFloat kMaxIPadTextViewHeight = 142;
     self.voiceMemoButton.accessibilityLabel = NSLocalizedString(@"INPUT_TOOLBAR_VOICE_MEMO_BUTTON_ACCESSIBILITY_LABEL",
         @"accessibility label for the button which records voice memos");
     UIImage *micIcon = [Theme iconImage:ThemeIconMicButton];
-    [self.voiceMemoButton setTemplateImage:micIcon tintColor:Theme.primaryIconColor];
+    [self.voiceMemoButton setTemplateImage:micIcon tintColor:Theme.orangeTintColor];
     [self.voiceMemoButton autoSetDimensionsToSize:CGSizeMake(40, kMinToolbarItemHeight)];
     SET_SUBVIEW_ACCESSIBILITY_IDENTIFIER(self, _voiceMemoButton);
 
@@ -256,7 +256,7 @@ const CGFloat kMaxIPadTextViewHeight = 142;
     self.stickerButton.accessibilityLabel = NSLocalizedString(@"INPUT_TOOLBAR_STICKER_BUTTON_ACCESSIBILITY_LABEL",
         @"accessibility label for the button which shows the sticker picker");
     UIImage *stickerIcon = [Theme iconImage:ThemeIconStickerButton];
-    [self.stickerButton setTemplateImage:stickerIcon tintColor:Theme.primaryIconColor];
+    [self.stickerButton setTemplateImage:stickerIcon tintColor: Theme.orangeTintColor];
     [self.stickerButton addTarget:self
                            action:@selector(stickerButtonPressed)
                  forControlEvents:UIControlEventTouchUpInside];
@@ -633,7 +633,7 @@ const CGFloat kMaxIPadTextViewHeight = 142;
         ensureViewHiddenState(self.stickerButton, hideStickerButton);
         if (!hideStickerButton) {
             self.stickerButton.imageView.tintColor
-                = (self.desiredKeyboardType == KeyboardType_Sticker ? UIColor.ows_accentBlueColor
+                = (self.desiredKeyboardType == KeyboardType_Sticker ? Theme.orangeTintColor
                                                                     : Theme.primaryIconColor);
         }
 
@@ -996,7 +996,7 @@ const CGFloat kMaxIPadTextViewHeight = 142;
         [weakSelf.inputToolbarDelegate voiceMemoGestureDidComplete];
     }];
     [sendVoiceMemoButton setTitle:MessageStrings.sendButton forState:UIControlStateNormal];
-    [sendVoiceMemoButton setTitleColor:UIColor.ows_accentBlueColor forState:UIControlStateNormal];
+    [sendVoiceMemoButton setTitleColor:Theme.orangeTintColor forState:UIControlStateNormal];
     sendVoiceMemoButton.alpha = 0;
     [self.voiceMemoContentView addSubview:sendVoiceMemoButton];
     [sendVoiceMemoButton autoPinEdgeToSuperviewMargin:ALEdgeRight withInset:10.f];

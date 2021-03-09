@@ -33,7 +33,7 @@ class LegacyGroupView: UIView {
         let text = String(format: format, highlightedSubstring)
         let attributedString = NSMutableAttributedString(string: text)
         attributedString.setAttributes([
-            .foregroundColor: Theme.accentBlueColor
+            .foregroundColor: Theme.orangeTintColor()
             ],
                                        forSubstring: highlightedSubstring)
         label.attributedText = attributedString
@@ -210,7 +210,7 @@ public class LegacyGroupViewLearnMoreView: UIView {
         let okayButton = OWSFlatButton.button(title: CommonStrings.okayButton,
                                               font: buttonFont,
                                               titleColor: .white,
-                                              backgroundColor: .ows_accentBlue,
+                                              backgroundColor: Theme.orangeTintColor(),
                                               target: self,
                                               selector: #selector(dismissAlert))
         okayButton.autoSetDimension(.height, toSize: buttonHeight)

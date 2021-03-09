@@ -199,8 +199,8 @@ class NameCollisionActionCell: UITableViewCell {
 
     private func createButton(for action: Action) -> UIButton {
         let button = OWSButton(title: action.title, block: action.action)
-        button.setTitleColor(Theme.accentBlueColor, for: .normal)
-        button.setTitleColor(Theme.accentBlueColor.withAlphaComponent(0.7), for: .highlighted)
+        button.setTitleColor(Theme.orangeTintColor(), for: .normal)
+        button.setTitleColor(Theme.orangeTintColor().withAlphaComponent(0.7), for: .highlighted)
         button.titleLabel?.font = UIFont.ows_dynamicTypeSubheadlineClamped.ows_semibold
         button.titleLabel?.adjustsFontForContentSizeCategory = true
         button.titleLabel?.numberOfLines = 0

@@ -113,7 +113,7 @@ public class StickerPackViewController: OWSViewController {
 
         authorLabel.font = UIFont.ows_dynamicTypeBody
 
-        defaultPackIconView.setTemplateImageName("check-circle-filled-16", tintColor: Theme.accentBlueColor)
+        defaultPackIconView.setTemplateImageName("check-circle-filled-16", tintColor: Theme.orangeTintColor())
         defaultPackIconView.isHidden = true
 
         shareButton.setTemplateImageName("forward-solid-24", tintColor: Theme.darkThemePrimaryColor)
@@ -155,7 +155,7 @@ public class StickerPackViewController: OWSViewController {
 
         let installButton = OWSFlatButton.button(title: NSLocalizedString("STICKERS_INSTALL_BUTTON", comment: "Label for the 'install sticker pack' button."),
                                              font: UIFont.ows_dynamicTypeBody.ows_semibold,
-                                             titleColor: Theme.accentBlueColor,
+                                             titleColor: Theme.orangeTintColor(),
                                              backgroundColor: UIColor.white,
                                              target: self,
                                              selector: #selector(didTapInstall))
@@ -163,7 +163,7 @@ public class StickerPackViewController: OWSViewController {
         installButton.accessibilityIdentifier = UIView.accessibilityIdentifier(in: self, name: "installButton")
         let uninstallButton = OWSFlatButton.button(title: NSLocalizedString("STICKERS_UNINSTALL_BUTTON", comment: "Label for the 'uninstall sticker pack' button."),
                                              font: UIFont.ows_dynamicTypeBody.ows_semibold,
-                                             titleColor: Theme.accentBlueColor,
+                                             titleColor: Theme.orangeTintColor(),
                                              backgroundColor: UIColor.white,
                                              target: self,
                                              selector: #selector(didTapUninstall))
@@ -258,7 +258,7 @@ public class StickerPackViewController: OWSViewController {
         authorLabel.text = stickerPack.author?.filterForDisplay
 
         let isDefaultStickerPack = StickerManager.isDefaultStickerPack(stickerPack.info)
-        authorLabel.textColor = isDefaultStickerPack ? Theme.accentBlueColor : Theme.darkThemePrimaryColor
+        authorLabel.textColor = isDefaultStickerPack ? Theme.orangeTintColor() : Theme.darkThemePrimaryColor
         defaultPackIconView.isHidden = !isDefaultStickerPack
 
         // We need to consult StickerManager for the latest "isInstalled"

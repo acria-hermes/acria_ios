@@ -788,7 +788,7 @@ NSString *const kArchiveButtonPseudoGroup = @"kArchiveButtonPseudoGroup";
     [self.navigationItem.leftBarButtonItem setEnabled:NO];
     [self.navigationItem.leftBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                      [UIFont boldSystemFontOfSize:26], NSFontAttributeName,
-                                     Theme.primaryTextColor, NSForegroundColorAttributeName,
+                                     Theme.whiteBlackColor, NSForegroundColorAttributeName,
                                      nil]
                            forState: UIControlStateDisabled];
     SET_SUBVIEW_ACCESSIBILITY_IDENTIFIER(self, settingsButton);
@@ -813,6 +813,8 @@ NSString *const kArchiveButtonPseudoGroup = @"kArchiveButtonPseudoGroup";
     camera.accessibilityIdentifier = ACCESSIBILITY_IDENTIFIER_WITH_NAME(self, @"camera");
 
     self.navigationItem.rightBarButtonItems = @[settingsButton, compose, camera];
+    
+    [(OWSNavigationBar*)self.navigationController.navigationBar switchToStyle:NavigationBarStyleOrange];
 }
 
 - (void)showNewConversationView
@@ -1571,7 +1573,7 @@ NSString *const kArchiveButtonPseudoGroup = @"kArchiveButtonPseudoGroup";
                                               ^{ [self markThreadAsRead:thread]; });
                                       }];
 
-                readStateAction.backgroundColor = UIColor.ows_accentBlueColor;
+                readStateAction.backgroundColor = Theme.orangeTintColor;
                 readStateAction.accessibilityLabel = CommonStrings.readAction;
                 readStateAction.image = [self actionImageNamed:@"read-solid-24"
                                                      withTitle:readStateAction.accessibilityLabel];
@@ -1593,7 +1595,7 @@ NSString *const kArchiveButtonPseudoGroup = @"kArchiveButtonPseudoGroup";
                                                                   });
                                                           }];
 
-                readStateAction.backgroundColor = UIColor.ows_accentBlueColor;
+                readStateAction.backgroundColor = Theme.orangeTintColor;
                 readStateAction.accessibilityLabel = CommonStrings.unreadAction;
                 readStateAction.image = [self actionImageNamed:@"unread-solid-24"
                                                      withTitle:readStateAction.accessibilityLabel];

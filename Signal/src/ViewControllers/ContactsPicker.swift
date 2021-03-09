@@ -96,6 +96,7 @@ public class ContactsPicker: OWSViewController, UITableViewDelegate, UITableView
         tableView.estimatedRowHeight = 60.0
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 60
+        tableView.sectionIndexColor = Theme.orangeTintColor();
 
         tableView.allowsMultipleSelection = allowsMultipleSelection
 

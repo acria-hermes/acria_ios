@@ -396,7 +396,7 @@ class ContactViewController: OWSViewController, ContactShareViewHelperDelegate {
         let label = UILabel()
         label.text = labelText
         label.font = UIFont.ows_dynamicTypeBody
-        label.textColor = Theme.accentBlueColor
+        label.textColor = Theme.orangeTintColor()
         label.lineBreakMode = .byTruncatingTail
         row.addSubview(label)
         label.autoPinTopToSuperviewMargin()
@@ -455,7 +455,7 @@ class ContactViewController: OWSViewController, ContactShareViewHelperDelegate {
         let label = UILabel()
         label.text = text
         label.font = UIFont.ows_dynamicTypeBody
-        label.textColor = Theme.accentBlueColor
+        label.textColor = Theme.orangeTintColor()
         label.lineBreakMode = .byTruncatingTail
         label.textAlignment = .center
         button.addSubview(label)

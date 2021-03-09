@@ -131,7 +131,7 @@ class GroupsV2AndMentionsSplash: SplashViewController {
         let okayButton = OWSFlatButton.button(title: CommonStrings.okayButton,
                                               font: UIFont.ows_dynamicTypeBody.ows_semibold,
                                               titleColor: .white,
-                                              backgroundColor: .ows_accentBlue,
+                                              backgroundColor: Theme.orangeTintColor(),
                                               target: self,
                                               selector: #selector(didTapOkayButton))
         okayButton.autoSetHeightUsingFont()
@@ -140,7 +140,7 @@ class GroupsV2AndMentionsSplash: SplashViewController {
 
         let learnMoreButton = OWSFlatButton.button(title: CommonStrings.learnMore,
                                               font: UIFont.ows_dynamicTypeBody,
-                                              titleColor: Theme.accentBlueColor,
+                                              titleColor: Theme.orangeTintColor(),
                                               backgroundColor: Theme.backgroundColor,
                                               target: self,
                                               selector: #selector(didTapLearnMoreButton))

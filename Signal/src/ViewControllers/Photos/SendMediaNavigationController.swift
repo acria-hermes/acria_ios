@@ -464,7 +464,7 @@ extension SendMediaNavigationController: UINavigationControllerDelegate {
                 setNavigationBarHidden(true, animated: animated)
             }
         case is AttachmentApprovalViewController:
-            showNavbar(.clear)
+            showNavbar(.orange)
         case is ImagePickerGridController:
             showNavbar(.alwaysDark)
         case is ConversationPickerViewController:
@@ -856,7 +856,7 @@ private class DoneButton: UIView {
     private lazy var badge: UIView = {
         let badge = PillView()
         badge.layoutMargins = UIEdgeInsets(top: 4, leading: 4, bottom: 4, trailing: 4)
-        badge.backgroundColor = .ows_accentBlue
+        badge.backgroundColor = Theme.orangeTintColor()
         badge.addSubview(badgeLabel)
         badgeLabel.autoPinEdgesToSuperviewMargins()
 

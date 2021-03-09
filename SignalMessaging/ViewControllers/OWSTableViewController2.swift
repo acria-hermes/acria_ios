@@ -461,7 +461,7 @@ extension OWSTableViewController2: UITableViewDataSource, UITableViewDelegate {
             textView.font = UIFont.ows_dynamicTypeCaption1Clamped
 
             let linkTextAttributes: [NSAttributedString.Key: Any] = [
-                NSAttributedString.Key.foregroundColor: Theme.accentBlueColor,
+                NSAttributedString.Key.foregroundColor: Theme.orangeTintColor,
                 NSAttributedString.Key.font: UIFont.ows_dynamicTypeCaption1Clamped,
                 NSAttributedString.Key.underlineStyle: 0
             ]

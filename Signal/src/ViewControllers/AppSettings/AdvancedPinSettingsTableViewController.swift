@@ -29,7 +29,7 @@ class AdvancedPinSettingsTableViewController: OWSTableViewController {
                                     comment: "")
                 : NSLocalizedString("SETTINGS_ADVANCED_PINS_DISABLE_PIN_ACTION",
                                     comment: ""),
-            textColor: Theme.accentBlueColor,
+            textColor: Theme.orangeTintColor(),
             accessibilityIdentifier: "advancedPinSettings.disable",
             actionBlock: { [weak self] in
                 guard let self = self else { return }

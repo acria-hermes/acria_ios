@@ -98,7 +98,7 @@ public class GroupLinkPromotionActionSheet: UIView {
             builder.addBottomButton(title: NSLocalizedString("GROUP_LINK_PROMOTION_ALERT_SHARE_LINK",
                                                              comment: "Label for the 'share link' button in the 'group link promotion' alert view."),
                                     titleColor: .white,
-                                    backgroundColor: .ows_accentBlue,
+                                    backgroundColor: Theme.orangeTintColor(),
                                     target: self,
                                     selector: #selector(dismissAndShareLink))
         } else {
@@ -144,7 +144,7 @@ public class GroupLinkPromotionActionSheet: UIView {
             builder.addBottomButton(title: NSLocalizedString("GROUP_LINK_PROMOTION_ALERT_ENABLE_AND_SHARE_LINK",
                                                              comment: "Label for the 'enable and share link' button in the 'group link promotion' alert view."),
                                     titleColor: .white,
-                                    backgroundColor: .ows_accentBlue,
+                                    backgroundColor: Theme.orangeTintColor(),
                                     target: self,
                                     selector: #selector(enableAndShareLink))
         }

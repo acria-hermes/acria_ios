@@ -135,6 +135,10 @@ public class AttachmentPrepViewController: OWSViewController {
         prepDelegate?.prepViewControllerUpdateControls()
 
         showBlurTooltipIfNecessary()
+        
+        if let navigationBar = navigationController?.navigationBar as? OWSNavigationBar {
+            navigationBar.switchToStyle(.orange)
+        }
     }
 
     override public func viewDidAppear(_ animated: Bool) {
@@ -144,6 +148,10 @@ public class AttachmentPrepViewController: OWSViewController {
 
         prepDelegate?.prepViewControllerUpdateNavigationBar()
         prepDelegate?.prepViewControllerUpdateControls()
+        
+        if let navigationBar = navigationController?.navigationBar as? OWSNavigationBar {
+            navigationBar.switchToStyle(.orange)
+        }
     }
 
     override public func viewWillLayoutSubviews() {
@@ -167,6 +175,8 @@ public class AttachmentPrepViewController: OWSViewController {
         if let videoEditorView = videoEditorView {
             return videoEditorView.navigationBarItems()
         }
+        imageEditorView?.backgroundColor
+            = Theme.orangeBackground()
         return []
     }
 
@@ -385,7 +395,7 @@ extension AttachmentPrepViewController: ImageEditorViewDelegate {
         navigationController.ows_prefersStatusBarHidden = true
 
         if let navigationBar = navigationController.navigationBar as? OWSNavigationBar {
-            navigationBar.switchToStyle(.clear)
+            navigationBar.switchToStyle(.orange)
         } else {
             owsFailDebug("navigationBar was nil or unexpected class")
         }

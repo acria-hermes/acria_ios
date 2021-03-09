@@ -59,7 +59,7 @@ class ContactNameFieldView: UIView {
         let nameLabel = UILabel()
         nameLabel.text = name
         nameLabel.font = UIFont.ows_dynamicTypeBody
-        nameLabel.textColor = Theme.accentBlueColor
+        nameLabel.textColor = Theme.orangeTintColor()
         nameLabel.lineBreakMode = .byTruncatingTail
         stackView.addArrangedSubview(nameLabel)
         nameLabel.setContentHuggingHigh()

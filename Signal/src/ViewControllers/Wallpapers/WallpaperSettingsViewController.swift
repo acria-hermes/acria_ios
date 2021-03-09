@@ -273,7 +273,7 @@ class MiniPreviewView: UIView {
         let bubbleView = UIView()
         bubbleView.layer.cornerRadius = 10
         bubbleView.autoSetDimensions(to: CGSize(width: 100, height: 30))
-        bubbleView.backgroundColor = .ows_accentBlue
+        bubbleView.backgroundColor = UIColor(red: 0.93, green: 0.93, blue: 0.97, alpha: 1.00)
         containerView.addSubview(bubbleView)
         bubbleView.autoPinEdge(toSuperviewEdge: .trailing, withInset: 8)
         bubbleView.autoPinHeightToSuperview()

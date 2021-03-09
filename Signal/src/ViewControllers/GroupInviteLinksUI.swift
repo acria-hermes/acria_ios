@@ -135,7 +135,7 @@ class GroupInviteLinksActionSheet: ActionSheetController {
         let joinButton = OWSFlatButton.button(title: NSLocalizedString("GROUP_LINK_ACTION_SHEET_VIEW_JOIN_BUTTON",
                                                                        comment: "Label for the 'join' button in the 'group invite link' action sheet."),
                                               font: UIFont.ows_dynamicTypeBody.ows_semibold,
-                                              titleColor: .ows_accentBlue,
+                                              titleColor: Theme.orangeTintColor(),
                                               backgroundColor: Theme.washColor,
                                               target: self,
                                               selector: #selector(didTapJoin))

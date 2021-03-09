@@ -69,7 +69,7 @@ public class OWSButton: UIButton {
         button.layer.cornerRadius = buttonWidth / 2
         button.autoSetDimensions(to: CGSize(square: buttonWidth))
 
-        button.backgroundColor = .ows_accentBlue
+        button.backgroundColor = Theme.orangeTintColor()
 
         return button
     }

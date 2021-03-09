@@ -141,7 +141,7 @@ public class OnboardingProfileCreationViewController: OnboardingBaseViewControll
             learnMoreString.styled(with:
                 .link(URL(string: "https://support.signal.org/hc/articles/360007459591")!),
                 .font(.ows_dynamicTypeCaption1),
-                .color(Theme.accentBlueColor),
+                .color(Theme.orangeTintColor()),
                 .underline([], nil)
             )
         ])
@@ -215,10 +215,10 @@ public class OnboardingProfileCreationViewController: OnboardingBaseViewControll
 
         // The save button will be pinned above the scroll view to the top of the keyboard
         saveButton.setEnabled(false)
+        primaryView.backgroundColor = Theme.orangeBackground()
         primaryView.addSubview(saveButtonGradient)
         primaryView.addSubview(saveButtonBackdrop)
         saveButtonBackdrop.addSubview(saveButton)
-
         saveButtonGradient.isUserInteractionEnabled = false
         saveButtonBackdrop.preservesSuperviewLayoutMargins = true
         saveButtonBackdrop.layoutMargins = UIEdgeInsets(top: 8, leading: 0, bottom: Self.standardMargin, trailing: 0)
@@ -226,8 +226,10 @@ public class OnboardingProfileCreationViewController: OnboardingBaseViewControll
         saveButton.autoPinEdgesToSuperviewMargins()
         saveButtonGradient.autoPinWidthToSuperview()
         saveButtonBackdrop.autoPinWidthToSuperview()
+        
+        saveButtonBackdrop.backgroundColor = Theme.orangeBackground()
 
-        saveButtonGradient.autoSetDimension(.height, toSize: 30)
+        saveButtonGradient.autoSetDimension(.height, toSize: 0)
         saveButtonGradient.autoPinEdge(.bottom, to: .top, of: saveButtonBackdrop)
         saveButtonBackdrop.autoPinEdge(.bottom, to: .bottom, of: contentScrollView)
     }
@@ -298,10 +300,10 @@ public class OnboardingProfileCreationViewController: OnboardingBaseViewControll
             // Text will be rebuilt with updated colors
             self.footerTextView.attributedText = self.footerText
 
-            self.saveButtonBackdrop.backgroundColor = Theme.backgroundColor
+            self.saveButtonBackdrop.backgroundColor = Theme.orangeBackground()
             self.saveButtonGradient.colors = [
-                (Theme.backgroundColor.withAlphaComponent(0), 0.0),
-                (Theme.backgroundColor, 1.0)
+                (Theme.orangeBackground().withAlphaComponent(0), 0.0),
+                (Theme.orangeBackground(), 1.0)
             ]
         }
     }

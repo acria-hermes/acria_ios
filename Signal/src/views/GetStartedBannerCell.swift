@@ -119,7 +119,7 @@ class GetStartedBannerCell: UICollectionViewCell {
     }
 
     @objc func applyTheme() {
-        let titleColor: UIColor = Theme.isDarkThemeEnabled ? .ows_gray05 : .ows_accentBlue
+        let titleColor: UIColor = Theme.isDarkThemeEnabled ? .ows_gray05 : Theme.orangeTintColor()
         actionButton.setTitleColor(titleColor, for: .normal)
 
         actionButton.backgroundColor = Theme.isDarkThemeEnabled ? .ows_gray65 : .ows_gray02

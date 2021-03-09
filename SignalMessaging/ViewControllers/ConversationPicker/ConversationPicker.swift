@@ -715,7 +715,7 @@ private class ConversationPickerCell: ContactTableViewCell {
         let imageView = UIImageView()
         imageView.autoSetDimensions(to: selectionBadgeSize)
         imageView.image = ConversationPickerCell.selectedBadgeImage
-        imageView.tintColor = .ows_accentBlue
+        imageView.tintColor = Theme.orangeTintColor()
         return imageView
     }()
 }

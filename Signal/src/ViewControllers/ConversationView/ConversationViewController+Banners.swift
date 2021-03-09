@@ -240,7 +240,7 @@ fileprivate extension ConversationViewController {
         bannerView.spacing = 10
         bannerView.layoutMargins = UIEdgeInsets(top: 14, leading: 16, bottom: 14, trailing: 16)
         bannerView.isLayoutMarginsRelativeArrangement = true
-        bannerView.addBackgroundView(withBackgroundColor: .ows_accentBlue)
+        bannerView.addBackgroundView(withBackgroundColor: Theme.orangeTintColor())
         bannerView.accessibilityIdentifier = accessibilityIdentifier
         return bannerView
     }
@@ -342,8 +342,8 @@ private class MessageRequestNameCollisionBanner: UIView {
             comment: "Button to allow user to review known name collisions with an incoming message request")
 
         let button = OWSButton(title: buttonText)
-        button.setTitleColor(Theme.accentBlueColor, for: .normal)
-        button.setTitleColor(Theme.accentBlueColor.withAlphaComponent(0.7), for: .highlighted)
+        button.setTitleColor(Theme.orangeTintColor(), for: .normal)
+        button.setTitleColor(Theme.orangeTintColor().withAlphaComponent(0.7), for: .highlighted)
         button.titleLabel?.font = UIFont.ows_dynamicTypeFootnote
         button.translatesAutoresizingMaskIntoConstraints = false
         return button

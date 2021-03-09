@@ -228,7 +228,7 @@ class SelectMorePhotosCell: UICollectionViewCell {
             titleColor: .ows_white
         )
         button.contentEdgeInsets = UIEdgeInsets(top: 5, leading: 12, bottom: 5, trailing: 12)
-        button.setBackgroundColors(upColor: .ows_accentBlue)
+        button.setBackgroundColors(upColor: Theme.orangeTintColor())
 
         let buttonContainer = UIView()
         buttonContainer.addSubview(button)

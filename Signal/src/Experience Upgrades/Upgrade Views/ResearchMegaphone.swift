@@ -73,7 +73,7 @@ private class ResearchModal: UIViewController {
         stackView.addArrangedSubview(.spacer(withHeight: 48))
 
         let takeTheSurveyButton = OWSFlatButton()
-        takeTheSurveyButton.setBackgroundColors(upColor: .ows_accentBlue)
+        takeTheSurveyButton.setBackgroundColors(upColor: Theme.orangeTintColor())
         takeTheSurveyButton.useDefaultCornerRadius()
         takeTheSurveyButton.setAttributedTitle(
             NSAttributedString.composed(of: [
@@ -112,7 +112,7 @@ private class ResearchModal: UIViewController {
                 comment: "Button text for declining the research modal"
             ),
             font: UIFont.ows_dynamicTypeBody.ows_semibold,
-            titleColor: Theme.accentBlueColor
+            titleColor: Theme.orangeTintColor()
         )
         noThanksButton.autoSetDimension(.height, toSize: OWSFlatButton.heightForFont(.ows_dynamicTypeBody))
         noThanksButton.setPressedBlock { [weak self] in

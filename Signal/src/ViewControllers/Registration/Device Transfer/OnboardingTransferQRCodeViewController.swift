@@ -49,9 +49,9 @@ public class OnboardingTransferQRCodeViewController: OnboardingBaseViewControlle
         helpButton.button.titleLabel?.textAlignment = .center
         helpButton.button.titleLabel?.numberOfLines = 0
         helpButton.button.titleLabel?.lineBreakMode = .byWordWrapping
-
+        helpButton.setTitleColor(Theme.orangeTintColor())
         let cancelButton = self.linkButton(title: CommonStrings.cancelButton, selector: #selector(didTapCancel))
-
+        cancelButton.setTitleColor(Theme.orangeTintColor())
         let stackView = UIStackView(arrangedSubviews: [
             titleLabel,
             explanationLabel,

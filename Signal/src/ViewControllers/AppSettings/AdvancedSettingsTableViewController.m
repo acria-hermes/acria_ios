@@ -243,7 +243,7 @@ NS_ASSUME_NONNULL_BEGIN
                               : NSLocalizedString(@"SETTINGS_RELINK_BUTTON", @"Label for re-link button.")
                                  accessibilityIdentifier:ACCESSIBILITY_IDENTIFIER_WITH_NAME(self, @"reregister")
                                                 selector:@selector(reregisterUser)
-                                                   color:Theme.accentBlueColor]];
+                                                   color:Theme.orangeTintColor]];
         [deleteAccountSection
             addItem:[self destructiveButtonItemWithTitle:NSLocalizedString(@"SETTINGS_DELETE_DATA_BUTTON",
                                                              @"Label for 'delete data' button.")

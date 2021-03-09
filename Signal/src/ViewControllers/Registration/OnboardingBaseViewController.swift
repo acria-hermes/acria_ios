@@ -59,7 +59,7 @@ public class OnboardingBaseViewController: OWSViewController {
         let button = OWSFlatButton.button(
             title: title,
             font: UIFont.ows_dynamicTypeBodyClamped.ows_semibold,
-            titleColor: Theme.buttonTintColot(),
+            titleColor: Theme.buttonTintColor(),
             backgroundColor: Theme.white(),
             target: self,
             selector: selector)
@@ -72,7 +72,7 @@ public class OnboardingBaseViewController: OWSViewController {
         let button = OWSFlatButton.button(
             title: title,
             font: UIFont.ows_dynamicTypeSubheadlineClamped,
-            titleColor: Theme.accentBlueColor,
+            titleColor: Theme.orangeTintColor(),
             backgroundColor: .clear,
             target: self,
             selector: selector)

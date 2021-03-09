@@ -1,21 +1,23 @@
 {
   "images" : [
     {
+      "filename" : "Group.png",
       "idiom" : "universal",
-      "filename" : "mic-outline-24.pdf",
       "scale" : "1x"
     },
     {
+      "filename" : "Group@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Group@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }

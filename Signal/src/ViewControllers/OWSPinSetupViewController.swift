@@ -85,7 +85,7 @@ public class PinSetupViewController: OWSViewController {
 
     private lazy var pinTypeToggle: OWSFlatButton = {
         let pinTypeToggle = OWSFlatButton()
-        pinTypeToggle.setTitle(font: .ows_dynamicTypeSubheadlineClamped, titleColor: Theme.accentBlueColor)
+        pinTypeToggle.setTitle(font: .ows_dynamicTypeSubheadlineClamped, titleColor: Theme.orangeTintColor())
         pinTypeToggle.setBackgroundColors(upColor: .clear)
 
         pinTypeToggle.enableMultilineLabel()
@@ -103,7 +103,7 @@ public class PinSetupViewController: OWSViewController {
         nextButton.setTitle(
             title: CommonStrings.nextButton,
             font: UIFont.ows_dynamicTypeBodyClamped.ows_semibold,
-            titleColor: Theme.buttonTintColot())
+            titleColor: Theme.buttonTintColor())
         nextButton.setBackgroundColors(upColor: .white)
 
         nextButton.button.clipsToBounds = true

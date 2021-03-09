@@ -281,6 +281,7 @@ extension ConversationSettingsViewController {
 
             let switchView = UISwitch()
             switchView.isOn = disappearingMessagesConfiguration.isEnabled
+            switchView.onTintColor = Theme.orangeTintColor()
             switchView.addTarget(self, action: switchAction, for: .valueChanged)
             switchView.isEnabled = canEditConversationAttributes
 
@@ -328,6 +329,7 @@ extension ConversationSettingsViewController {
                     = Float(self.disappearingMessagesDurations.count - 1)
                 slider.minimumValue = 0
                 slider.isContinuous = true // NO fires change event only once you let go
+                slider.tintColor = Theme.orangeTintColor()
                 slider.value = Float(self.disappearingMessagesConfiguration.durationIndex)
                 slider.addTarget(self, action: sliderAction, for: .valueChanged)
                 cell.contentView.addSubview(slider)
@@ -638,7 +640,7 @@ extension ConversationSettingsViewController {
                 let rowLabel = UILabel()
                 rowLabel.text = NSLocalizedString("CONVERSATION_SETTINGS_ADD_MEMBERS",
                                                   comment: "Label for 'add members' button in conversation settings view.")
-                rowLabel.textColor = Theme.accentBlueColor
+                rowLabel.textColor = Theme.orangeTintColor()
                 rowLabel.font = OWSTableItem.primaryLabelFont
                 rowLabel.lineBreakMode = .byTruncatingTail
 

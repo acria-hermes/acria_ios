@@ -60,7 +60,7 @@ class GroupCallErrorView: UIView {
         button.titleLabel?.textAlignment = .center
         button.titleLabel?.font = UIFont.ows_dynamicTypeSubheadline.ows_semibold
         button.setTitle(buttonLabel, for: .normal)
-
+        button.setTitleColor(Theme.orangeTintColor(), for: .normal)
         button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
         return button
     }()
@@ -69,7 +69,7 @@ class GroupCallErrorView: UIView {
         let button = UIButton()
         button.contentVerticalAlignment = .fill
         button.contentHorizontalAlignment = .fill
-
+        button.setTitleColor(Theme.orangeTintColor(), for: .normal)
         button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
         return button
     }()

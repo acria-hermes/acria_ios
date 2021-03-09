@@ -40,7 +40,7 @@ public class ViewOnceTooltip: TooltipView {
     }
 
     public override var bubbleColor: UIColor {
-        return UIColor.ows_accentBlue
+        return Theme.orangeTintColor()
     }
 
     public override var bubbleInsets: UIEdgeInsets {

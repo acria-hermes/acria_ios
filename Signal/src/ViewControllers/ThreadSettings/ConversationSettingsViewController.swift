@@ -193,6 +193,10 @@ class ConversationSettingsViewController: OWSTableViewController {
         } else {
             navigationItem.rightBarButtonItem = nil
         }
+        
+        if let navigationBar = navigationController?.navigationBar as? OWSNavigationBar {
+            navigationBar.switchToStyle(.orange)
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -613,7 +617,12 @@ class ConversationSettingsViewController: OWSTableViewController {
         }
 
         contactViewController.delegate = self
+  
         navigationController?.pushViewController(contactViewController, animated: true)
+        if let navigationBar = contactViewController.navigationController?.navigationBar as? OWSNavigationBar {
+            navigationBar.tintColor = Theme.orangeTintColor()
+        }
+        
     }
 
     func presentAvatarViewController() {

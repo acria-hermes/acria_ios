@@ -38,7 +38,7 @@ public class BlurTooltip: TooltipView {
     }
 
     public override var bubbleColor: UIColor {
-        return UIColor.ows_accentBlue
+        return Theme.orangeTintColor()
     }
 
     public override var tailDirection: TooltipView.TailDirection {

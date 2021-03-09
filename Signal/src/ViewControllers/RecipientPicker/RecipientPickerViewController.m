@@ -320,6 +320,8 @@ const NSUInteger kMinimumSearchLength = 2;
     [self.contactsViewHelper warmNonSignalContactsCacheAsync];
 
     self.title = NSLocalizedString(@"MESSAGE_COMPOSEVIEW_TITLE", @"");
+    
+    [(OWSNavigationBar*)self.navigationController.navigationBar switchToStyle:NavigationBarStyleDefault];
 }
 
 - (void)viewWillAppear:(BOOL)animated

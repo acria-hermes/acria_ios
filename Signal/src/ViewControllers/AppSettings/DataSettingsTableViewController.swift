@@ -65,7 +65,7 @@ class DataSettingsTableViewController: OWSTableViewController {
             let resetAccessibilityIdentifier = "reset-auto-download-settings"
             if hasNonDefaultValue {
                 autoDownloadSection.add(OWSTableItem.item(name: resetCopy,
-                                                          textColor: Theme.accentBlueColor,
+                                                          textColor: Theme.orangeTintColor(),
                                                           accessibilityIdentifier: resetAccessibilityIdentifier) {
                     Self.databaseStorage.asyncWrite { transaction in
                         OWSAttachmentDownloads.resetMediaBandwidthPreferences(transaction: transaction)

@@ -142,7 +142,7 @@ class GroupAttributesEditorHelper: NSObject {
 
     public static func buildCameraButtonForCenter() -> UIView {
         let cameraImageView = UIImageView()
-        cameraImageView.setTemplateImageName("camera-outline-24", tintColor: Theme.accentBlueColor)
+        cameraImageView.setTemplateImageName("camera-outline-24", tintColor: Theme.orangeTintColor())
         let iconSize: CGFloat = 32
         cameraImageView.autoSetDimensions(to: CGSize(square: iconSize))
         return cameraImageView

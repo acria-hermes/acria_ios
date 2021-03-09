@@ -359,7 +359,7 @@ private class MemberHeader: UIStackView {
         button.layer.cornerRadius = 24
         button.clipsToBounds = true
         button.imageEdgeInsets = UIEdgeInsets(top: 12, leading: 12, bottom: 12, trailing: 12)
-        button.setTemplateImageName(Theme.iconName(icon), tintColor: Theme.accentBlueColor)
+        button.setTemplateImageName(Theme.iconName(icon), tintColor: Theme.orangeTintColor())
         return button
     }
 

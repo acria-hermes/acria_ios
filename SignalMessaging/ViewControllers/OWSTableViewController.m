@@ -525,6 +525,7 @@ const CGFloat kOWSTable_DefaultCellHeight = 45.f;
         cell.textLabel.text = text;
 
         UISwitch *cellSwitch = [UISwitch new];
+        cellSwitch.onTintColor = Theme.orangeOnTintColor;
         cell.accessoryView = cellSwitch;
         [cellSwitch setOn:isOnBlock()];
         [cellSwitch addTarget:weakTarget action:selector forControlEvents:UIControlEventValueChanged];
@@ -594,6 +595,7 @@ NSString *const kOWSTableCellIdentifier = @"kOWSTableCellIdentifier";
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.tableView.sectionIndexColor = Theme.orangeTintColor;
 
     [self.view addSubview:self.tableView];
 
@@ -715,6 +717,7 @@ NSString *const kOWSTableCellIdentifier = @"kOWSTableCellIdentifier";
     [OWSTableItem configureCell:cell];
 
     cell.textLabel.text = item.title;
+    
 
     if (self.useThemeBackgroundColors) {
         customCell.backgroundColor = Theme.tableCellBackgroundColor;
@@ -778,7 +781,7 @@ NSString *const kOWSTableCellIdentifier = @"kOWSTableCellIdentifier";
         textView.textColor = UIColor.ows_gray45Color;
         textView.font = UIFont.ows_dynamicTypeCaption1Font;
         textView.linkTextAttributes = @{
-            NSForegroundColorAttributeName : Theme.accentBlueColor,
+            NSForegroundColorAttributeName : Theme.orangeTintColor,
             NSUnderlineStyleAttributeName : @(NSUnderlineStyleNone),
             NSFontAttributeName : UIFont.ows_dynamicTypeCaption1Font,
         };

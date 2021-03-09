@@ -1,0 +1,72 @@
+/*
+ * Copyright 2019-2021 Signal Messenger, LLC
+ * SPDX-License-Identifier: AGPL-3.0-only
+ */
+
+syntax = "proto2";
+
+// Messages sent over the signaling channel
+
+package signaling;
+
+import "group_call.proto";
+
+// A serialized one these goes in the "opaque" field of the CallingMessage::Offer in SignalService.proto
+// For future compatibility, we can add new slots (v2, v3, v4 ....)
+message Offer {
+  optional ConnectionParametersV3OrV2 V3OrV2 = 2;
+  optional ConnectionParametersV4 v4 = 4;
+}
+
+// A serialized one these goes in the "opaque" field of the CallingMessage::Offer in SignalService.proto
+message Answer {
+  optional ConnectionParametersV3OrV2 V3OrV2 = 2;
+  optional ConnectionParametersV4 v4 = 4;
+}
+
+// A serialized one these goes in the "opaque" field of the CallingMessage::Ice in SignalService.proto
+message IceCandidate {
+  optional IceCandidateV3OrV2 V3OrV2 = 2;
+}
+
+// The V2 protocol uses SDP, DTLS, but not SCTP.
+// The V3 protocol uses SDP, but not DTLS, but not SCTP.
+message ConnectionParametersV3OrV2 {
+  optional string sdp = 1;
+  // V2 has this unset.
+  // V3 has this set
+  optional bytes public_key = 2;
+}
+
+message IceCandidateV3OrV2 {
+  optional string sdp = 1;
+}
+
+enum VideoCodecType {
+  VP8 = 8;
+  H264_CONSTRAINED_BASELINE = 40;
+  H264_CONSTRAINED_HIGH = 46;
+}
+
+message VideoCodec {
+  optional VideoCodecType type = 1;
+  // Used for H264; Not used for VP8
+  optional uint32 level = 2;
+}
+
+message ConnectionParametersV4 {
+  optional bytes public_key = 1;
+  optional string ice_ufrag = 2;
+  optional string ice_pwd = 3;
+  // In other words, the video codecs the sender can receive.
+  repeated VideoCodec receive_video_codecs = 4;
+  // Used at call establishment to convey the bitrate that should be used for sending.
+  optional uint64 max_bitrate_bps = 5;
+}
+
+// A generic calling message that is opaque to the application but interpreted by RingRTC.
+// A serialized one of these goes into the "Opaque" field in the CallingMessage variant
+// in Signal protocol messages.
+message CallMessage {
+  optional group_call.DeviceToDevice group_call_message = 1;
+}

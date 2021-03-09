@@ -1,0 +1,47 @@
+#!/bin/sh
+
+#
+# Copyright 2019-2021 Signal Messenger, LLC
+# SPDX-License-Identifier: AGPL-3.0-only
+#
+
+set -e
+
+BIN_DIR="$(realpath -e $(dirname $0))"
+. "${BIN_DIR}/env.sh"
+
+case "$1" in
+    android)
+        WEBRTC_PLATFORM="android"
+        ;;
+    ios)
+        WEBRTC_PLATFORM="ios"
+        ;;
+    mac)
+        WEBRTC_PLATFORM="mac"
+        ;;
+    unix)
+        WEBRTC_PLATFORM="unix"
+        ;;
+    windows)
+        WEBRTC_PLATFORM="windows"
+        ;;
+    *)
+        echo "ERROR: Unknown platform type: $1"
+        echo "Supported platforms: 'android', 'ios', 'mac', 'unix', 'windows'"
+        exit 1
+esac
+
+BIN_DIR="$(realpath -e $(dirname $0))"
+. "${BIN_DIR}/env.sh"
+
+mkdir -p $OUTPUT_DIR
+echo "WEBRTC_PLATFORM=$WEBRTC_PLATFORM" > "${OUTPUT_DIR}/platform.env"
+
+# WebRTC checkout
+$BIN_DIR/gsync-webrtc "$WEBRTC_REVISION"
+
+# Platform specific setup
+prepare_workspace_platform
+
+echo "WEBRTC_PLATFORM=$WEBRTC_PLATFORM" > "${OUTPUT_DIR}/${WEBRTC_PLATFORM}.env"

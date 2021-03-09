@@ -152,7 +152,7 @@ public class AttachmentApprovalViewController: UIPageViewController, UIPageViewC
             owsFailDebug("navigationBar was nil or unexpected class")
             return navController
         }
-        navigationBar.switchToStyle(.clear)
+        navigationBar.switchToStyle(.orange)
 
         return navController
     }
@@ -243,7 +243,7 @@ public class AttachmentApprovalViewController: UIPageViewController, UIPageViewC
             owsFailDebug("navigationBar was nil or unexpected class")
             return
         }
-        navigationBar.switchToStyle(.clear)
+        navigationBar.switchToStyle(.orange)
 
         updateContents(isApproved: false)
     }
@@ -320,6 +320,10 @@ public class AttachmentApprovalViewController: UIPageViewController, UIPageViewC
     }()
 
     public func updateNavigationBar() {
+        if let navigationBar = navigationController?.navigationBar as? OWSNavigationBar {
+            navigationBar.switchToStyle(.orange)
+        }
+        
         guard !shouldHideControls else {
             self.navigationItem.leftBarButtonItem = nil
             self.navigationItem.rightBarButtonItem = nil

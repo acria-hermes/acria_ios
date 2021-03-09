@@ -117,7 +117,7 @@ public class NewGroupConfirmViewController: OWSViewController {
             }
             let attributedString = NSMutableAttributedString(string: legacyGroupText)
             attributedString.setAttributes([
-                .foregroundColor: Theme.accentBlueColor
+                .foregroundColor: Theme.orangeTintColor()
                 ],
                                            forSubstring: learnMoreText)
 
@@ -506,7 +506,7 @@ class NewLegacyGroupView: UIView {
         let okayButton = OWSFlatButton.button(title: CommonStrings.okayButton,
                                               font: buttonFont,
                                               titleColor: .white,
-                                              backgroundColor: .ows_accentBlue,
+                                              backgroundColor: Theme.orangeTintColor(),
                                               target: self,
                                               selector: #selector(dismissAlert))
         okayButton.autoSetDimension(.height, toSize: buttonHeight)

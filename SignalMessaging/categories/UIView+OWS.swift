@@ -311,7 +311,7 @@ public extension UIViewController {
     /// the default card style added in iOS 13.
     @objc(presentFullScreenViewController:animated:completion:)
     func presentFullScreen(_ viewControllerToPresent: UIViewController, animated: Bool, completion: (() -> Void)? = nil) {
-        viewControllerToPresent.modalPresentationStyle = .fullScreen
+        viewControllerToPresent.modalPresentationStyle = .formSheet
         present(viewControllerToPresent, animated: animated, completion: completion)
     }
 
@@ -320,7 +320,7 @@ public extension UIViewController {
         // Presenting form sheet on iPhone should always use the default presentation style.
         // We get this for free, except on phones with the regular width size class (big phones
         // in landscape, XR, XS Max, 8+, etc.)
-        viewControllerToPresent.modalPresentationStyle = .fullScreen
+        viewControllerToPresent.modalPresentationStyle = .formSheet
         present(viewControllerToPresent, animated: animated, completion: completion)
     }
 }

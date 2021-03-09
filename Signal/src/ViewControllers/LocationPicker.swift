@@ -337,7 +337,7 @@ extension LocationPicker: MKMapViewDelegate {
         if annotation is MKUserLocation { return nil }
 
         let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "annotation")
-        pin.pinTintColor = Theme.accentBlueColor
+        pin.pinTintColor = Theme.orangeTintColor()
         pin.animatesDrop = annotation is MKPointAnnotation
         pin.rightCalloutAccessoryView = sendLocationButton()
         pin.canShowCallout = true
@@ -346,7 +346,7 @@ extension LocationPicker: MKMapViewDelegate {
 
     func sendLocationButton() -> UIButton {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 24, height: 24))
-        button.setTemplateImageName("send-solid-24", tintColor: Theme.accentBlueColor)
+        button.setTemplateImageName("send-solid-24", tintColor: Theme.orangeTintColor())
         return button
     }
 
@@ -459,7 +459,7 @@ public class Location: NSObject {
                 snapshot.image.draw(at: .zero)
 
                 let pinView = MKPinAnnotationView(annotation: nil, reuseIdentifier: nil)
-                pinView.pinTintColor = Theme.accentBlueColor
+                pinView.pinTintColor = Theme.orangeTintColor()
                 let pinImage = pinView.image
 
                 var point = snapshot.point(for: self.coordinate)

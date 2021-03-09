@@ -66,6 +66,10 @@ NS_ASSUME_NONNULL_BEGIN
     self.navigationBar.titleTextAttributes = [UINavigationBar appearance].titleTextAttributes;
 }
 
+-(void) navBarSwitchToStyle:(NavigationBarStyle)style {
+    [(OWSNavigationBar*)self.navigationBar switchToStyle:style];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

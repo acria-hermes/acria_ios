@@ -14,8 +14,10 @@
 #import "Signal-Swift.h"
 #import <SignalMessaging/Environment.h>
 #import <SignalMessaging/OWSContactsManager.h>
+#import <SignalMessaging/UIView+OWS.h>
+#import "ViewControllerUtils.h"
+#import <SignalMessaging/SignalMessaging-Swift.h>
 #import <SignalMessaging/UIUtil.h>
-#import <SignalServiceKit/SignalServiceKit-Swift.h>
 #import <SignalServiceKit/TSAccountManager.h>
 #import <SignalServiceKit/TSSocketManager.h>
 
@@ -85,8 +87,8 @@
     self.title = NSLocalizedString(@"SETTINGS_NAV_BAR_TITLE", @"Title for settings activity");
 
     [self updateTableContents];
-
     [self.bulkProfileFetch fetchProfileWithAddress:self.tsAccountManager.localAddress];
+    [(OWSNavigationBar*)self.navigationController.navigationBar switchToStyle:NavigationBarStyleDefault];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -261,7 +263,7 @@
     } else {
         titleLabel.text = NSLocalizedString(
             @"APP_SETTINGS_EDIT_PROFILE_NAME_PROMPT", @"Text prompting user to edit their profile name.");
-        titleLabel.textColor = Theme.accentBlueColor;
+        titleLabel.textColor = Theme.orangeTintColor;
         titleLabel.font = [UIFont ows_dynamicTypeHeadlineFont];
     }
     titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;

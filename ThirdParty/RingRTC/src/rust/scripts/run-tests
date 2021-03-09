@@ -1,0 +1,10 @@
+#!/bin/sh
+
+#
+# Copyright 2019-2021 Signal Messenger, LLC
+# SPDX-License-Identifier: AGPL-3.0-only
+#
+
+OUTPUT_DIR="${OUTPUT_DIR:-/tmp/ringrtc-tests}"
+export RANDOM_SEED="${RANDOM_SEED:-$(date +%s)}"
+cargo test --features sim --target-dir=$OUTPUT_DIR "$@" -- --nocapture --test-threads=1

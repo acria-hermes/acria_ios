@@ -1,0 +1,15 @@
+out/
+cscope.*
+.DS_Store
+.dir-locals.el
+.cargo
+*.code-workspace
+**/.vscode
+.idea
+src/webrtc/
+src/webrtc/.cipd
+src/webrtc/.gclient*
+src/jar.list
+.project
+.classpath
+org.eclipse.buildship.core.prefs

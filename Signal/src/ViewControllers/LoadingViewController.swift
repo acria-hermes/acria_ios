@@ -19,13 +19,13 @@ public class LoadingViewController: UIViewController {
 
     override public func loadView() {
         self.view = UIView()
-        view.backgroundColor = Theme.launchScreenBackground
+        view.backgroundColor = Theme.orangeBackground()
 
-        self.logoView = UIImageView(image: #imageLiteral(resourceName: "signal-logo-128-launch-screen"))
+        self.logoView = UIImageView(image: #imageLiteral(resourceName: "Acria_Logo"))
         view.addSubview(logoView)
 
         logoView.autoCenterInSuperview()
-        logoView.autoSetDimensions(to: CGSize(square: 128))
+        logoView.autoSetDimensions(to: CGSize(width: 200, height: 61))
 
         self.topLabel = buildLabel()
         topLabel.alpha = 0

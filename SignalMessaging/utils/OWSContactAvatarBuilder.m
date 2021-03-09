@@ -223,7 +223,7 @@ NS_ASSUME_NONNULL_BEGIN
         return cachedAvatar;
     }
 
-    UIColor *color = [OWSConversationColor conversationColorOrDefaultForColorName:self.colorName].themeColor;
+    UIColor *color = [UIColor colorWithRed: 0.94 green: 0.94 blue: 0.94 alpha: 1.00];
     OWSAssertDebug(color);
 
     UIImage *_Nullable image;

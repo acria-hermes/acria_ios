@@ -46,15 +46,7 @@ public class OWSNavigationBar: UINavigationBar {
             return
         }
 
-        let color = Theme.navbarBackgroundColor
-        let backgroundImage = UIImage(color: color)
-        
-        self.barTintColor = Theme.navbarBackgroundColor
-        self.setBackgroundImage(backgroundImage, for: .default)
-        self.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Theme.primaryTextColor]
-        self.tintColor = Theme.orangeBackground()
-        
-        
+        switchToStyle(.orange)
         
         isTranslucent = false
     }
@@ -76,7 +68,7 @@ public class OWSNavigationBar: UINavigationBar {
 
     @objc
     public enum NavigationBarStyle: Int {
-        case clear, alwaysDark, `default`, secondaryBar
+        case clear, alwaysDark, `default`, secondaryBar, orange
     }
 
     private var currentStyle: NavigationBarStyle?
@@ -85,16 +77,36 @@ public class OWSNavigationBar: UINavigationBar {
     public func switchToStyle(_ style: NavigationBarStyle) {
         let applyDarkThemeOverride = {
             self.barStyle = .default
-            self.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Theme.primaryTextColor]
+            self.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Theme.whiteBlackColor()]
             self.barTintColor = Theme.navbarBackgroundColor
-            self.tintColor =  Theme.orangeBackground()
+            self.tintColor =  Theme.whiteBlackColor()
         }
 
         let removeDarkThemeOverride = {
             self.barStyle = .default
-            self.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Theme.primaryTextColor]
+            self.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Theme.whiteBlackColor()]
             self.barTintColor = Theme.navbarBackgroundColor
+            self.tintColor = Theme.whiteBlackColor()
+        }
+        
+        let whiteThemeOverride = {
+            let color = Theme.navbarBackgroundColor
+            let backgroundImage = UIImage(color: color)
+            
+            self.barTintColor = Theme.navbarOrangeBackgroundColor()
+            self.setBackgroundImage(backgroundImage, for: .default)
+            self.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Theme.primaryTextColor]
             self.tintColor = Theme.orangeBackground()
+        }
+        
+        let orangeThemeOverride = {
+            let color = Theme.navbarOrangeBackgroundColor()
+            let backgroundImage = UIImage(color: color)
+            
+            self.barTintColor = Theme.navbarOrangeBackgroundColor()
+            self.setBackgroundImage(backgroundImage, for: .default)
+            self.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Theme.whiteBlackColor()]
+            self.tintColor = Theme.whiteBlackColor()
         }
 
         let applyTransparentBarOverride = {
@@ -134,11 +146,9 @@ public class OWSNavigationBar: UINavigationBar {
             removeTransparentBarOverride()
             applyDarkThemeOverride()
         case .default:
-            respectsTheme = true
-            removeDarkThemeOverride()
-            removeTransparentBarOverride()
-            removeSecondaryBarOverride()
-            applyTheme()
+            whiteThemeOverride()
+        case .orange:
+            orangeThemeOverride()
         case .secondaryBar:
             respectsTheme = true
             removeDarkThemeOverride()

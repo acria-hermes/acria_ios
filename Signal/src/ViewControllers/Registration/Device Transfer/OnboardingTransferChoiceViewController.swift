@@ -75,7 +75,8 @@ public class OnboardingTransferChoiceViewController: OnboardingBaseViewControlle
 
         let explanationLabel = self.createExplanationLabel(explanationText: explanationText)
         explanationLabel.accessibilityIdentifier = "onboarding.transferChoice." + "explanationLabel"
-
+        
+        
         let warningLabel = self.createExplanationLabel(
             explanationText: NSLocalizedString("DEVICE_TRANSFER_CHOICE_WARNING",
                                                comment: "A warning for the device transfer 'choice' view indicating you can only have one device registered with your number")
@@ -159,7 +160,7 @@ public class OnboardingTransferChoiceViewController: OnboardingBaseViewControlle
         titleLabel.numberOfLines = 0
         titleLabel.lineBreakMode = .byWordWrapping
         titleLabel.font = UIFont.ows_dynamicTypeBody.ows_semibold
-        titleLabel.textColor = .white
+        titleLabel.textColor = .black
 
         let bodyLabel = UILabel()
         bodyLabel.text = body

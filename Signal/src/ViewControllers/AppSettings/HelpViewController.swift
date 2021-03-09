@@ -45,7 +45,7 @@ final class HelpViewController: OWSTableViewController {
                 guard let signalAsset = UIImage(named: "signal-logo-128") else { return nil }
 
                 let header = UIView()
-                header.backgroundColor = Theme.isDarkThemeEnabled ? .ows_signalBlueDark : .ows_signalBlue
+                header.backgroundColor = Theme.isDarkThemeEnabled ? Theme.orangeTintColor() : Theme.orangeTintColor()
                 let signalLogo = UIImageView(image: signalAsset)
                 signalLogo.contentMode = .scaleAspectFit
 

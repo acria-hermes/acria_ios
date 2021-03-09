@@ -329,6 +329,8 @@ public class OnboardingVerificationViewController: OnboardingBaseViewController 
         let backLink = self.linkButton(title: NSLocalizedString("ONBOARDING_VERIFICATION_BACK_LINK",
                                                                 comment: "Label for the link that lets users change their phone number in the onboarding views."),
                                        selector: #selector(backLinkTapped))
+        
+        backLink.setTitleColor(.white)
         self.backLink = backLink
         backLink.accessibilityIdentifier = "onboarding.verification." + "backLink"
 
@@ -505,11 +507,11 @@ public class OnboardingVerificationViewController: OnboardingBaseViewController 
             resendCodeButton?.setTitle(
                 title: resendCodeTitle,
                 font: .ows_dynamicTypeSubheadlineClamped,
-                titleColor: Theme.accentBlueColor)
+                titleColor: .white)
             callMeButton?.setTitle(
                 title: callMeTitle,
                 font: .ows_dynamicTypeSubheadlineClamped,
-                titleColor: Theme.accentBlueColor)
+                titleColor: .white)
 
         } else {
             let countdownInterval = abs(codeCountdownStart.timeIntervalSinceNow)

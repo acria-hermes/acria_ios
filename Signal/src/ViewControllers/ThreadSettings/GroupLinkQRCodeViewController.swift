@@ -54,7 +54,7 @@ public class GroupLinkQRCodeViewController: OWSViewController {
                                                                             comment: "Label for the 'share code' button in the 'group link QR code' view."),
                                                    font: UIFont.ows_dynamicTypeBody.ows_semibold,
                                                    titleColor: .white,
-                                                   backgroundColor: .ows_accentBlue,
+                                                   backgroundColor: Theme.orangeTintColor(),
                                                    target: self,
                                                    selector: #selector(didTapShareCode))
         shareCodeButton.autoSetHeightUsingFont()

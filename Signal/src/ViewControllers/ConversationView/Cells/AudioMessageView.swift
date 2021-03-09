@@ -242,10 +242,10 @@ class AudioMessageView: OWSStackView {
         UIEdgeInsets(hMargin: 0, vMargin: 4)
     }
 
-    private lazy var playedColor: UIColor = isIncoming ? .init(rgbHex: 0x92caff) : .ows_white
+    private lazy var playedColor: UIColor = isIncoming ? Theme.orangeTintColor() : Theme.orangeTintColor()
     private lazy var unplayedColor: UIColor =
-        isIncoming ? Theme.secondaryTextAndIconColor.withAlphaComponent(0.3) : UIColor.ows_white.withAlphaComponent(0.6)
-    private lazy var thumbColor: UIColor = isIncoming ? Theme.secondaryTextAndIconColor : .ows_white
+        isIncoming ? Theme.secondaryTextAndIconColor.withAlphaComponent(0.3) : Theme.secondaryTextAndIconColor.withAlphaComponent(0.3)
+    private lazy var thumbColor: UIColor = isIncoming ? Theme.orangeTintColor() : Theme.orangeTintColor()
 
     // If set, the playback should reflect
     // this progress, not the actual progress.

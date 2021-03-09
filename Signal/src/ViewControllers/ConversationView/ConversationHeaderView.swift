@@ -32,7 +32,7 @@ public class ConversationHeaderView: UIStackView {
         }
         set {
             self.titleIconView.image = newValue
-            self.titleIconView.tintColor = Theme.secondaryTextAndIconColor
+            self.titleIconView.tintColor = Theme.whiteBlackColor()
             self.titleIconView.isHidden = newValue == nil
         }
     }
@@ -78,7 +78,7 @@ public class ConversationHeaderView: UIStackView {
         avatarView.layer.borderWidth = 0
 
         titleLabel = UILabel()
-        titleLabel.textColor = Theme.navbarTitleColor
+        titleLabel.textColor = Theme.whiteBlackColor()
         titleLabel.lineBreakMode = .byTruncatingTail
         titleLabel.font = titlePrimaryFont
         titleLabel.setContentHuggingHigh()
@@ -91,7 +91,7 @@ public class ConversationHeaderView: UIStackView {
         titleColumns.spacing = 5
 
         subtitleLabel = UILabel()
-        subtitleLabel.textColor = Theme.navbarTitleColor
+        subtitleLabel.textColor = Theme.whiteBlackColor()
         subtitleLabel.lineBreakMode = .byTruncatingTail
         subtitleLabel.font = subtitleFont
         subtitleLabel.setContentHuggingHigh()
@@ -140,8 +140,8 @@ public class ConversationHeaderView: UIStackView {
 
     @objc
     func themeDidChange() {
-        titleLabel.textColor = Theme.navbarTitleColor
-        subtitleLabel.textColor = Theme.navbarTitleColor
+        titleLabel.textColor = Theme.whiteBlackColor()
+        subtitleLabel.textColor = Theme.whiteBlackColor()
     }
 
     @objc

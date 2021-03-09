@@ -160,7 +160,7 @@ public class PinConfirmationViewController: OWSViewController {
             title: actionText,
             font: font,
             titleColor: .white,
-            backgroundColor: .ows_accentBlue,
+            backgroundColor: Theme.orangeTintColor(),
             target: self,
             selector: #selector(submitPressed)
         )
@@ -170,7 +170,7 @@ public class PinConfirmationViewController: OWSViewController {
         // Cancel button
         let cancelButton = UIButton()
         cancelButton.setTitle(CommonStrings.cancelButton, for: .normal)
-        cancelButton.setTitleColor(Theme.accentBlueColor, for: .normal)
+        cancelButton.setTitleColor(Theme.orangeTintColor(), for: .normal)
         cancelButton.titleLabel?.font = .ows_dynamicTypeSubheadlineClamped
         cancelButton.addTarget(self, action: #selector(cancelPressed), for: .touchUpInside)
         cancelButton.accessibilityIdentifier = "pinConfirmation.cancelButton"

@@ -219,7 +219,7 @@ public class GroupMigrationActionSheet: UIView {
         mutating func addOkayButton(target: Any, selector: Selector) {
             addBottomButton(title: CommonStrings.okayButton,
                             titleColor: .white,
-                            backgroundColor: .ows_accentBlue,
+                            backgroundColor: Theme.orangeTintColor(),
                             target: target,
                             selector: selector)
         }
@@ -296,12 +296,12 @@ public class GroupMigrationActionSheet: UIView {
         builder.addBottomButton(title: NSLocalizedString("GROUPS_LEGACY_GROUP_UPGRADE_ALERT_UPGRADE_BUTTON",
                                                          comment: "Label for the 'upgrade this group' button in the 'upgrade legacy group' alert view."),
                                 titleColor: .white,
-                                backgroundColor: .ows_accentBlue,
+                                backgroundColor: Theme.orangeTintColor(),
                                 target: self,
                                 selector: #selector(upgradeGroup))
         builder.addVerticalSpacer(height: 5)
         builder.addBottomButton(title: CommonStrings.cancelButton,
-                                titleColor: .ows_accentBlue,
+                                titleColor: Theme.orangeTintColor(),
                                 backgroundColor: .white,
                                 target: self,
                                 selector: #selector(dismissAlert))
@@ -455,12 +455,12 @@ public class GroupMigrationActionSheet: UIView {
         builder.addBottomButton(title: NSLocalizedString("GROUPS_LEGACY_GROUP_RE_ADD_DROPPED_GROUP_MEMBERS_ADD_MEMBERS_BUTTON",
                                                          comment: "Label for the 'add members' button in the 're-add dropped group members' alert view."),
                                 titleColor: .white,
-                                backgroundColor: .ows_accentBlue,
+                                backgroundColor: Theme.orangeTintColor(),
                                 target: self,
                                 selector: #selector(reAddDroppedMembers))
         builder.addVerticalSpacer(height: 5)
         builder.addBottomButton(title: CommonStrings.cancelButton,
-                                titleColor: .ows_accentBlue,
+                                titleColor: Theme.orangeTintColor(),
                                 backgroundColor: .white,
                                 target: self,
                                 selector: #selector(dismissAlert))

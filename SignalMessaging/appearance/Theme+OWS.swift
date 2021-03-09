@@ -35,6 +35,7 @@ public enum ThemeIcon: UInt {
 
     case stickerButton
     case cameraButton
+    case secondCameraButton
     case micButton
 
     case attachmentCamera
@@ -61,9 +62,11 @@ public enum ThemeIcon: UInt {
     case message
     case audioCall
     case videoCall
+    case circleVideoCall
     case info
     case groupMessage
     case profileChangeMessage
+    case circleTelephoneIcon
 
     case check16
     case compose16
@@ -194,11 +197,13 @@ public extension Theme {
 
         // Input Toolbar
         case .stickerButton:
-            return isDarkThemeEnabled ? "sticker-solid-24" : "sticker-outline-24"
+            return isDarkThemeEnabled ? "emoji-smiley-solid-20" : "emoji-smiley-outline-20"
         case .cameraButton:
             return "camera-solid-24"
+        case .secondCameraButton:
+            return "photo-camera-attach"
         case .micButton:
-            return isDarkThemeEnabled ? "mic-solid-24" : "mic-outline-24"
+            return "mic-solid-24" //isDarkThemeEnabled ? "mic-solid-24" : "mic-outline-24"
         case .attachmentCamera:
             return "camera-outline-32"
         case .attachmentContact:
@@ -244,8 +249,12 @@ public extension Theme {
             return isDarkThemeEnabled ? "message-solid-24" : "message-outline-24"
         case .audioCall:
             return isDarkThemeEnabled ? "phone-solid-24" : "phone-outline-24"
+        case .circleTelephoneIcon:
+            return "circle_telephone_icon"
         case .videoCall:
             return isDarkThemeEnabled ? "video-solid-24" : "video-outline-24"
+        case .circleVideoCall:
+            return "video_call"
         case .info:
             return isDarkThemeEnabled ? "info-solid-24" : "ic_info"
         case .groupMessage:

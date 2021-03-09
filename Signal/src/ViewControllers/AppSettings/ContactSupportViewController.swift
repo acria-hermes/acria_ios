@@ -70,7 +70,7 @@ final class ContactSupportViewController: OWSTableViewController {
 
     @objc override func applyTheme() {
         super.applyTheme()
-        navigationItem.rightBarButtonItem?.tintColor = Theme.accentBlueColor
+        navigationItem.rightBarButtonItem?.tintColor = Theme.orangeTintColor()
 
         // Rebuild the contents to force them to update their theme
         rebuildTableContents()
@@ -257,7 +257,7 @@ extension ContactSupportViewController {
                     cell.textLabel?.adjustsFontForContentSizeCategory = true
                     cell.textLabel?.numberOfLines = 0
                     cell.textLabel?.text = faqPromptText
-                    cell.textLabel?.textColor = Theme.accentBlueColor
+                    cell.textLabel?.textColor = Theme.orangeTintColor()
                     return cell
                 },
                    actionBlock: {

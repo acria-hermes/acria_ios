@@ -110,8 +110,12 @@ extern NSString *const ThemeDidChangeNotification;
 #pragma mark -
 
 + (UIColor *)orangeBackground;
++ (UIColor *)navbarOrangeBackgroundColor;
 + (UIColor *)white;
-+ (UIColor *)buttonTintColot;
++ (UIColor *)buttonTintColor;
++ (UIColor *)orangeTintColor;
++ (UIColor *)orangeOnTintColor;
++ (UIColor *)whiteBlackColor;
 
 @end
 

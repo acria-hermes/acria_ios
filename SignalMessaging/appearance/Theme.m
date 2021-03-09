@@ -305,7 +305,8 @@ NSString *const ThemeKeyCurrentMode = @"ThemeKeyCurrentMode";
 
 + (UIColor *)secondaryTextAndIconColor
 {
-    return (Theme.isDarkThemeEnabled ? Theme.darkThemeSecondaryTextAndIconColor : UIColor.ows_gray60Color);
+    return  [UIColor colorWithRed: 0.63 green: 0.61 blue: 0.66 alpha: 1.00];
+    //return (Theme.isDarkThemeEnabled ? Theme.darkThemeSecondaryTextAndIconColor : UIColor.ows_gray60Color);
 }
 
 + (UIColor *)darkThemeSecondaryTextAndIconColor
@@ -352,7 +353,12 @@ NSString *const ThemeKeyCurrentMode = @"ThemeKeyCurrentMode";
 
 + (UIColor *)navbarBackgroundColor
 {
-    return (Theme.isDarkThemeEnabled ? self.darkThemeNavbarBackgroundColor : UIColor.ows_whiteColor);
+    return (Theme.isDarkThemeEnabled ? self.darkThemeNavbarBackgroundColor : [UIColor whiteColor]);
+}
+
++ (UIColor *)navbarOrangeBackgroundColor
+{
+    return [UIColor colorWithRed: 0.94 green: 0.51 blue: 0.24 alpha: 1.00];
 }
 
 + (UIColor *)darkThemeNavbarBackgroundColor
@@ -457,7 +463,8 @@ NSString *const ThemeKeyCurrentMode = @"ThemeKeyCurrentMode";
 
 + (UIColor *)conversationButtonTextColor
 {
-    return (Theme.isDarkThemeEnabled ? UIColor.ows_gray05Color : UIColor.ows_accentBlueColor);
+    return  Theme.orangeTintColor;
+    //return (Theme.isDarkThemeEnabled ? UIColor.ows_gray05Color : Theme.orangeTintColor);
 }
 
 
@@ -527,9 +534,24 @@ NSString *const ThemeKeyCurrentMode = @"ThemeKeyCurrentMode";
     return [UIColor whiteColor];
 }
 
-+ (UIColor *)buttonTintColot
++ (UIColor *)buttonTintColor
 {
     return [UIColor colorWithRed: 0.19 green: 0.13 blue: 0.32 alpha: 1.00];
+}
+
++ (UIColor *)orangeOnTintColor
+{
+    return [UIColor colorWithRed: 0.94 green: 0.51 blue: 0.24 alpha: 1.00];
+}
+
++ (UIColor *)orangeTintColor
+{
+    return [UIColor colorWithRed: 0.94 green: 0.51 blue: 0.24 alpha: 1.00];
+}
+
++ (UIColor *)whiteBlackColor
+{
+    return (Theme.isDarkThemeEnabled ?  [UIColor blackColor] : [UIColor whiteColor]);
 }
 
 @end

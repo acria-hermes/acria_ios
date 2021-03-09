@@ -134,7 +134,7 @@ public class ConversationStyle: NSObject {
         self.conversationColor = ConversationStyle.conversationColor(thread: thread)
         self.viewWidth = viewWidth
         self.isDarkThemeEnabled = Theme.isDarkThemeEnabled
-        self.primaryTextColor = Theme.primaryTextColor
+        self.primaryTextColor = .black
         self.hasWallpaper = hasWallpaper
 
         gutterLeading = thread.isGroupThread ? 12 : 16
@@ -194,9 +194,9 @@ public class ConversationStyle: NSObject {
     @objc
     private var defaultBubbleColorIncoming: UIColor {
         if hasWallpaper {
-            return isDarkThemeEnabled ? .ows_gray95 : .white
+            return UIColor(red: 0.97, green: 0.97, blue: 0.97, alpha: 1.00)
         } else {
-            return isDarkThemeEnabled ? UIColor.ows_gray80 : UIColor.ows_gray05
+            return UIColor(red: 0.97, green: 0.97, blue: 0.97, alpha: 1.00)
         }
     }
 
@@ -204,10 +204,10 @@ public class ConversationStyle: NSObject {
     public let bubbleColorOutgoingFailed = UIColor.ows_accentBlue
 
     @objc
-    public let bubbleColorOutgoingSending = UIColor.ows_accentBlue
+    public let bubbleColorOutgoingSending = UIColor(red: 0.93, green: 0.93, blue: 0.97, alpha: 1.00)
 
     @objc
-    public let bubbleColorOutgoingSent = UIColor.ows_accentBlue
+    public let bubbleColorOutgoingSent = UIColor(red: 0.93, green: 0.93, blue: 0.97, alpha: 1.00)
 
     @objc
     public let dateBreakTextColor = UIColor.ows_gray60
@@ -240,17 +240,17 @@ public class ConversationStyle: NSObject {
 
     @objc
     public static var bubbleTextColorIncoming: UIColor {
-        Theme.isDarkThemeEnabled ? UIColor.ows_gray05 : UIColor.ows_gray90
+        UIColor(red: 0.20, green: 0.20, blue: 0.20, alpha: 1.00)
     }
 
     @objc
     public static var bubbleTextColorOutgoing: UIColor {
-        Theme.isDarkThemeEnabled ? UIColor.ows_gray05 : UIColor.ows_white
+        UIColor(red: 0.20, green: 0.20, blue: 0.20, alpha: 1.00)
     }
 
     @objc
     public var bubbleTextColorIncoming: UIColor {
-        isDarkThemeEnabled ? UIColor.ows_gray05 : UIColor.ows_gray90
+        UIColor(red: 0.20, green: 0.20, blue: 0.20, alpha: 1.00)
     }
 
     @objc
@@ -260,12 +260,12 @@ public class ConversationStyle: NSObject {
 
     @objc
     public var bubbleTextColorOutgoing: UIColor {
-        isDarkThemeEnabled ? UIColor.ows_gray05 : UIColor.ows_white
+        UIColor(red: 0.20, green: 0.20, blue: 0.20, alpha: 1.00)
     }
 
     @objc
     public var bubbleSecondaryTextColorOutgoing: UIColor {
-        isDarkThemeEnabled ? .ows_whiteAlpha60 : .ows_whiteAlpha80
+        UIColor(red: 0.20, green: 0.20, blue: 0.20, alpha: 1.00)
     }
 
     @objc
@@ -294,7 +294,7 @@ public class ConversationStyle: NSObject {
     @objc
     public func bubbleReadMoreTextColor(message: TSMessage) -> UIColor {
         if message is TSIncomingMessage {
-            return isDarkThemeEnabled ? .ows_whiteAlpha90 : .ows_accentBlue
+            return isDarkThemeEnabled ? .ows_whiteAlpha90 : Theme.orangeBackground()
         } else if message is TSOutgoingMessage {
             return isDarkThemeEnabled ? .ows_whiteAlpha90 : .white
         } else {
@@ -314,19 +314,19 @@ public class ConversationStyle: NSObject {
 
     @objc
     public var quotedReplyBubbleColor: UIColor {
-        isDarkThemeEnabled ? .ows_signalBlueDark : .ows_accentBlueTint
+        Theme.orangeBackground()
     }
 
     @objc
     public func quotedReplyStripeColor(isIncoming: Bool) -> UIColor {
         if isDarkThemeEnabled {
             if isIncoming {
-                return .ows_accentBlueTint
+                return Theme.orangeTintColor()
             } else {
                 return .ows_black
             }
         } else if isIncoming {
-            return .ows_accentBlue
+            return Theme.orangeTintColor()
         } else {
             return .ows_white
         }
@@ -335,7 +335,7 @@ public class ConversationStyle: NSObject {
     @objc
     public func quotingSelfHighlightColor() -> UIColor {
         // TODO:
-        UIColor.init(rgbHex: 0xB5B5B5)
+        Theme.orangeBackground()
     }
 
     @objc
